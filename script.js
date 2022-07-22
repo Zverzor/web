@@ -21,7 +21,7 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const lastMovie = prompt("Один из последних просмотренных фильмов?", '');
+        const lastMovie = prompt("Один из последних просмотренных фильмов?", '').trim();
         const lastMovieRate = prompt('На сколько оцените его?', '');
 
         if (lastMovie != null && lastMovieRate != null && lastMovie != '' && lastMovieRate != '' && lastMovie.length < 50) {
@@ -46,7 +46,7 @@ function detectPersonalLevel() {
     }
 }
 
-// detectPersonalLevel();
+detectPersonalLevel();
 
 function showMyBD(hidden) {
     if (!hidden) {
@@ -63,3 +63,4 @@ function writeYourGenerals() {
 }
 
 writeYourGenerals();
+
