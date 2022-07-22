@@ -134,8 +134,17 @@ const personalPlanPeter = {
             php: '10%'
         },
         exp: '1 month'
+    },
+    showAgeAndLangs: function (plan) {
+        let str = `Мне ${plan['age']} и я владею языками:`;
+        for (let key in plan['skills']['languages']) {
+            str += ` ${plan['skills']['languages'][key].toUpperCase()}`
+        }
+        return str;
     }
 };
+
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
 
 function showExperience(plan) {
     return plan['skills']['exp'];
@@ -145,7 +154,7 @@ function showProgrammingLangs(plan) {
     let lang = plan['skills']['programmingLangs'];
     let str = '';
     for (let key in lang) {
-        str += `Язык ${key} изучен на ${lang[key]} \n`
+        str += `Язык ${key} изучен на ${lang[key]}\n`
     }
     return str;
 }
